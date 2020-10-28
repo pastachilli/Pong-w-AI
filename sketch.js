@@ -2,8 +2,8 @@
 // Program: Pong Video Game With AI
 // Author: Gabe Postacchini
 // Description: Video Game where you play tennis. Added Artificual Intelligence
-// Date Last Modified: 27 October 2020
-// Version: 2.6
+// Date Last Modified: 28 October 2020
+// Version: 2.7
 
 // 'use strict';
 
@@ -162,7 +162,8 @@ let smartAI1 = () => {
     
       idealY1 = ballYa;
   } while (ballXa < windowWidth - 45 && ballXa > 45)
-    
+    fill('lightgreen')
+    circle(10, idealY1, 10);
     if(p1y + 75 < idealY1){
       input = 'down';
     } else if (p1y + 75 > idealY1) {
@@ -209,7 +210,8 @@ let smartAI2 = () => {
     } else if(p2y + 75 > idealY2) {
       input = 'up';
     }
-  
+    fill('lightgreen')
+    circle(windowWidth - 10, idealY2, 10);
     if(input == 'down'){
     p2y += 5;
   } else if (input == 'up'){
@@ -292,15 +294,15 @@ let wallCol = () => {
 // Win Or Loss:
 let wol = () => {
     if (ballX + ballVelX <= 15){
-      p2Score++
-      fill('white')
-      textSize(50)
+      p2Score++;
+      fill('white');
+      textSize(50);
       console.log(bot2 + ' 2 Wins!!');
       ballInit();
     } else if (ballX + ballVelX >= windowWidth - 15){
-      p1Score++
-      fill('white')
-      textSize(50)
+      p1Score++;
+      fill('white');
+      textSize(50);
       console.log(bot1 + ' 1 Wins!!');
       ballInit();
   }
